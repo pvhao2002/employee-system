@@ -45,7 +45,8 @@
 	<div th:if=${session.msg}>
 		<div class="alert alert-success" role="alert" th:text="${session.msg}">
 		</div>
-		<th:block th:text="${#session.removeAttribute('msg')}"></th:block>
+		<th:block th:inline="text">[[${#session.removeAttribute('msg')}]]</th:block>
+		<!-- <th:block th:text="${@sessionUtilityBean.removeVerificationMessageFromSession()}"></th:block> -->
 	</div>
 
 
